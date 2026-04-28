@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>няш-студия звукозаписи ✨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ["Quicksand", "system-ui", "sans-serif"] },
+                },
+            },
+        };
+    </script>
+    <style>
+        body { font-family: "Quicksand", system-ui, sans-serif; }
+        .rounded-kawaii { border-radius: 40px; }
+        @keyframes floaty {
+            0%, 100% { transform: translateY(0) rotate(-3deg); opacity: 0.35; }
+            50% { transform: translateY(-18px) rotate(3deg); opacity: 0.55; }
+        }
+        @keyframes floaty-slow {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+            33% { transform: translate(10px, -24px) scale(1.05); opacity: 0.45; }
+            66% { transform: translate(-12px, -10px) scale(0.95); opacity: 0.35; }
+        }
+        .emoji-float { animation: floaty 7s ease-in-out infinite; }
+        .emoji-float-slow { animation: floaty-slow 12s ease-in-out infinite; }
+        @keyframes gentle-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 0 rgba(255, 182, 193, 0.35), 0 8px 24px rgba(255, 182, 193, 0.25); }
+            50% { transform: scale(1.04); box-shadow: 0 4px 0 rgba(255, 182, 193, 0.5), 0 12px 32px rgba(255, 182, 193, 0.35); }
+        }
+        .btn-pulse { animation: gentle-pulse 2.2s ease-in-out infinite; }
+        @keyframes starFade {
+            0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -120%) scale(0.4); }
+        }
+        .cursor-star { position: fixed; pointer-events: none; z-index: 9999; font-size: 14px; line-height: 1; user-select: none; animation: starFade 0.75s ease-out forwards; text-shadow: 0 0 6px rgba(255, 255, 255, 0.9); }
+    </style>
+</head>
+<body class="min-h-screen bg-[#FFE4E1] text-rose-900 antialiased relative overflow-x-hidden">
+
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <span class="emoji-float absolute text-5xl sm:text-6xl left-[6%] top-[12%]" style="animation-delay: 0s;">&#10024;</span>
+        <span class="emoji-float-slow absolute text-4xl sm:text-5xl right-[8%] top-[20%]" style="animation-delay: 1s;">&#127800;</span>
+        <span class="emoji-float absolute text-4xl sm:text-5xl left-[15%] bottom-[18%]" style="animation-delay: 2s;">&#127872;</span>
+        <span class="emoji-float-slow absolute text-3xl sm:text-4xl right-[18%] bottom-[25%]" style="animation-delay: 0.5s;">&#10024;</span>
+        <span class="emoji-float absolute text-3xl left-[42%] top-[8%]" style="animation-delay: 3s;">&#127800;</span>
+        <span class="emoji-float-slow absolute text-4xl right-[38%] bottom-[10%]" style="animation-delay: 1.5s;">&#127872;</span>
+        <span class="emoji-float absolute text-2xl sm:text-3xl left-[72%] top-[38%]" style="animation-delay: 2.5s;">&#10024;</span>
+    </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-5 py-12 sm:py-16">
+
+        <header class="text-center mb-14">
+            <p class="text-sm font-medium text-rose-400/90 mb-3 tracking-wide">~ welcome to the soft side ~</p>
+            <h1 class="text-3xl sm:text-5xl font-bold text-rose-950 leading-tight drop-shadow-sm">
+                няш-студия<br>
+                <span class="text-rose-500">сэмпаев</span> <span class="inline-block origin-center hover:rotate-12 transition-transform">&#10024;</span>
+            </h1>
+            <p class="mt-6 text-base sm:text-lg text-rose-800/85 font-medium leading-relaxed max-w-xl mx-auto">
+                Здесь не страшно нажимать кнопки: мы любим милые звуки, пушистые сэмпы и когда трек звучит как обнимашка. Няшность — не слабость, а настрой эквалайзера сердца.
+            </p>
+            <nav class="mt-10 flex flex-wrap gap-3 justify-center">
+                <a href="#team" class="btn-pulse inline-flex items-center justify-center px-7 py-3.5 rounded-kawaii bg-white text-rose-600 font-semibold border-2 border-rose-200 hover:bg-rose-50 transition-colors">о нас &#127800;</a>
+                <a href="#what-is" class="btn-pulse inline-flex items-center justify-center px-7 py-3.5 rounded-kawaii bg-white text-rose-600 font-semibold border-2 border-rose-200 hover:bg-rose-50 transition-colors" style="animation-delay: 0.3s;">ЧТо это ??</a>
+                <a href="#why-us" class="btn-pulse inline-flex items-center justify-center px-7 py-3.5 rounded-kawaii bg-white text-rose-600 font-semibold border-2 border-rose-200 hover:bg-rose-50 transition-colors" style="animation-delay: 0.6s;">ПОЧЕМУ МЫ?</a>
+            </nav>
+        </header>
+
+        <section class="mb-10 rounded-kawaii bg-white/95 border-2 border-white shadow-[0_8px_40px_rgba(255,182,193,0.25)] p-8 sm:p-10 text-center">
+            <p class="text-rose-800/90 font-medium leading-relaxed">
+                Раньше сэмпы искали по пыльным папкам и страшным форумам.<br>
+                <span class="text-rose-500 font-semibold">Сейчас</span> — один милый клик, и петля уже обнимает твой бит. Всё по-няшному, без грусти.
+            </p>
+        </section>
+
+        <section id="what-is" class="mb-10 scroll-mt-8 rounded-kawaii bg-white/95 border-2 border-white shadow-[0_8px_40px_rgba(255,182,193,0.25)] p-8 sm:p-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-rose-950 mb-5 flex items-center gap-2 flex-wrap">
+                ЧТо это ?? <span class="text-rose-400">&#127872;</span>
+            </h2>
+            <p class="text-rose-800/90 font-medium leading-relaxed">
+                Это студия для тех, кто хочет, чтобы микрофон пищал не от стресса, а от радости. Тыкаешь кнопочку — и твой голос превращается в плюшевый припев, а сэмпы складываются как наклейки в блокнотике. Не магия из фильма ужасов, а мягкая магия аниме-опенинга.
+            </p>
+        </section>
+
+        <section id="why-us" class="mb-10 scroll-mt-8 rounded-kawaii bg-white/95 border-2 border-white shadow-[0_8px_40px_rgba(255,182,193,0.25)] p-8 sm:p-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-rose-950 mb-5">ПОЧЕМУ МЫ? &#127800;</h2>
+            <p class="text-rose-800/90 font-medium leading-relaxed">
+                Потому что мы сами немного сэмпаи для своих сэмпов: аккуратно, с уважением к няшности и без токсика. Мы из тимы, где «беларускі якасць» звучит как комплимент, а не как угроза. Наши плагины не кусают RAM — они гладят его по головке, даже если ты записываешь бит на один тапок и мечту.
+            </p>
+        </section>
+
+        <section id="neuro" class="mb-10 rounded-kawaii bg-white/95 border-2 border-white shadow-[0_8px_40px_rgba(255,182,193,0.25)] p-8 sm:p-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-rose-950 mb-6">НЕЙРО-ШТУКИ &#10024;</h2>
+            <div class="space-y-6 text-left">
+                <div class="rounded-kawaii bg-[#FFF5F5] border border-rose-100 p-6">
+                    <h3 class="font-bold text-rose-600 mb-2">Основной посыл</h3>
+                    <p class="text-rose-800/88 font-medium text-sm sm:text-base leading-relaxed">
+                        Когда-то звук был про сухие цифры и страшные таблицы. Теперь звук — это аккуратный промпт и чуть-чуть розового кода. Нейросети делают скучную рутину за нас, а мы остаёмся свободными для самого главного — выбирать, какой сэмп сегодня самый няшный.
+                    </p>
+                </div>
+                <div class="rounded-kawaii bg-[#FFF5F5] border border-rose-100 p-6">
+                    <h3 class="font-bold text-rose-600 mb-2">Как это работает</h3>
+                    <p class="text-rose-800/88 font-medium text-sm sm:text-base leading-relaxed">
+                        Мы подключаем IT, чтобы тебе не учить компрессоры десять лет по ночам. Нажал «сделай красиво» — моделька поняла настроение трека и подкрасила всё в пастель. Ты только машешь хвостиком в такт.
+                    </p>
+                </div>
+                <p class="text-xs text-rose-500/90 leading-relaxed border-l-4 border-rose-200 pl-4">
+                    <span class="font-semibold text-rose-600">Для жюри и умных котиков:</span> GAN для мягкого мастеринга, RVC, чтобы вокал звучал как любимый персонаж, LLM — чтобы структура трека не расползалась, как зефир в чае.
+                </p>
+            </div>
+        </section>
+
+        <section id="price" class="mb-10 rounded-kawaii bg-white/95 border-2 border-white shadow-[0_8px_40px_rgba(255,182,193,0.25)] p-8 sm:p-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-rose-950 mb-6 text-center">СКОЛЬКО? &#127872;</h2>
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div class="rounded-kawaii bg-[#FFF0F3] border-2 border-rose-100 p-6 text-center">
+                    <h3 class="text-lg font-bold text-emerald-600 mb-2">Вариант 1 — БЕСПЛАТНО</h3>
+                    <p class="text-sm text-rose-800/85 font-medium">Чисто потыкать, понюхать сэмпы и понять, что ты уже влюбился в звук.</p>
+                </div>
+                <div class="rounded-kawaii bg-[#FFF0F3] border-2 border-rose-100 p-6 text-center">
+                    <h3 class="text-lg font-bold text-rose-500 mb-2">Вариант 2 — за копейки</h3>
+                    <p class="text-sm text-rose-800/85 font-medium">Когда хочется больше няшных пресетов и чуть больше обнимашек от микса.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="mb-12 scroll-mt-8 rounded-kawaii bg-white/95 border-2 border-white shadow-[0_8px_40px_rgba(255,182,193,0.25)] p-8 sm:p-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-rose-950 mb-2">MEET the</h2>
+            <p class="text-center text-xl font-bold text-rose-500 mb-8">тима беларуских &#127800;</p>
+            <div class="grid sm:grid-cols-2 gap-5 text-left">
+                <div class="rounded-kawaii bg-[#FFFBFB] border border-rose-100 p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-rose-950">Саша Мандрыкин</h3>
+                    <p class="text-sm text-rose-500 font-semibold mt-1">мц няшка стесняшка</p>
+                </div>
+                <div class="rounded-kawaii bg-[#FFFBFB] border border-rose-100 p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-rose-950">Юрец Ильин</h3>
+                    <p class="text-sm text-rose-500 font-semibold mt-1">DJ дайрект X три дэ</p>
+                </div>
+                <div class="rounded-kawaii bg-[#FFFBFB] border border-rose-100 p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-rose-950">Софико Читанова</h3>
+                    <p class="text-sm text-rose-500 font-semibold mt-1">эмси бла бла бла</p>
+                </div>
+                <div class="rounded-kawaii bg-[#FFFBFB] border border-rose-100 p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-rose-950">Артём Калтырин</h3>
+                    <p class="text-sm text-rose-500 font-semibold mt-1">янг онии чан</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="rounded-kawaii bg-white/90 border-2 border-rose-100 px-6 py-8 text-center space-y-3 shadow-inner">
+            <p class="text-rose-600 font-semibold text-sm tracking-wide">СВЯЗЬ: ТЕЛЕГА / ГОЛУБИНАЯ ПОЧТА.</p>
+            <p class="text-xs text-rose-400 font-medium">&#169; ТИМА БЕЛАРУСКИХ 2026. НИКАКИХ ПРАВ НЕ ЗАЩИЩЕНО.</p>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            const chars = ["\u2605", "\u2727", "\u2726", "\u2736", "\u2729"];
+            let lastT = 0;
+            let lx = 0, ly = 0;
+            document.addEventListener("mousemove", function (e) {
+                const now = performance.now();
+                const d = Math.hypot(e.clientX - lx, e.clientY - ly);
+                if (now - lastT < 45 && d < 14) return;
+                lastT = now;
+                lx = e.clientX;
+                ly = e.clientY;
+                const el = document.createElement("span");
+                el.className = "cursor-star";
+                el.textContent = chars[Math.floor(Math.random() * chars.length)];
+                el.style.left = e.clientX + "px";
+                el.style.top = e.clientY + "px";
+                el.style.color = ["#f9a8d4", "#fda4af", "#fbcfe8", "#fce7f3"][Math.floor(Math.random() * 4)];
+                document.body.appendChild(el);
+                setTimeout(function () { el.remove(); }, 800);
+            });
+        })();
+    </script>
+</body>
+</html>
